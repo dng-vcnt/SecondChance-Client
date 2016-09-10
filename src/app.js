@@ -1,34 +1,36 @@
 (function() {
-	'use strict';
-	
-	angular
-		.module('app', ['ui.router', 'toastr'])
-		.value('apiUrl', 'http://localhost:64882/api/')
-    .config(appConfig);
+    'use strict';
 
-	appConfig.$inject = ['$urlRouterProvider', '$stateProvider']
+    angular
+        .module('app', ['ui.router', 'toastr'])
+        .value('apiUrl', 'http://localhost:50546/api/')  .config(appConfig);
 
-	function appConfig($urlRouterProvider, $stateProvider) {
+    appConfig.$inject = ['$urlRouterProvider', '$stateProvider']
 
-    	$urlRouterProvider.otherwise('/jobs');
-           
-      $stateProvider
-      	.state('jobs', {
-              url: '/jobs',
-              templateUrl: '/jobs/jobs.html',
-              controller: 'JobsController as jobs'
-        })
-				.state('employers', {
-              url: '/employers',
-              templateUrl: '/employers/employers.html',
-              controller: 'EmployersController as employers'
-        })
-				.state('felons', {
-              url: '/felons',
-              templateUrl: '/felons/felons.html',
-              controller: 'FelonsController as felons'
-        })
-  
+    function appConfig($urlRouterProvider, $stateProvider) {
+          
+        $urlRouterProvider.otherwise('/jobs');           
 
-      };
+        $stateProvider   
+        .state('jobs', {           
+            url: '/jobs',
+            abstract: true,
+            template: '<div ui-view></div>'
+        })
+            .state('project.list', {
+                url: '/list',
+                controller: 'ProjectListController as projectList',
+                templateUrl: 'app/project/project.list.html'
+            })
+        .state('employers', {           
+            url: '/employers',
+                       templateUrl: '/employers/employers.html',
+                       controller: 'EmployersController as employers'     
+        })
+        .state('felons', {           
+            url: '/felons',
+                       templateUrl: '/felons/felons.html',
+                       controller: 'FelonsController as felons'     
+        });
+    }
 })();
