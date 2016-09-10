@@ -1,0 +1,11 @@
+.textForm {
+  margin: 2px 0 2px;
+  width: 20%;
+  color: gray;
+  font-size: 12px;
+}
+
+#compDesc, #jobDesc {
+  width: 30%;
+  height: 150px;
+}
