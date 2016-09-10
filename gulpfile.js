@@ -2,9 +2,9 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     wiredep = require('wiredep').stream,
     gutil = require('gulp-util'),
-    connect = require('gulp-connect'),      
-    inject = require('gulp-inject'),    
-    open = require('gulp-open'); 
+    connect = require('gulp-connect'),
+    inject = require('gulp-inject'),
+    open = require('gulp-open');
 
 var jsSources = ['src/**/*.js'],
     cssSources = ['src/**/*.css'],
