@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
   <meta charset="UTF-8">
   <title></title>
 <!-- bower:css -->
 <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
 <!-- endbower -->
 
 <!-- inject:css -->
@@ -13,22 +14,29 @@
 </head>
 
 <body>
-
-
+<div class="jumbotron">
+	<div class="container">
+		<h1>Second Chance</h1>
+		<p>Jobs listings for reformed convicts</p>
+	</div>
+</div>
+<div class="container">
   <div ui-view></div>
-
+</div>
 
 <!-- bower:js -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 <!-- inject:js -->
 <script src="app.js"></script>
-<script src="core/employers.factory.js"></script>
-<script src="core/felons.factory.js"></script>
-<script src="core/jobs.factory.js"></script>
-<script src="jobs/job.factory.js"></script>
+<script src="core/employer.factory.js"></script>
+<script src="core/job.factory.js"></script>
+<script src="core/user.factory.js"></script>
+<script src="employers/company/company.create.controller.js"></script>
 <!-- endinject -->
 </body>
 </html>

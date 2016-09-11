@@ -3,19 +3,20 @@
 
     angular
         .module('app', ['ui.router', 'toastr'])
-        .value('apiUrl', 'http://localhost:50546/api/')  .config(appConfig);
+        .value('apiUrl', 'http://localhost:50546/api/')  
+        .config(appConfig);
 
     appConfig.$inject = ['$urlRouterProvider', '$stateProvider']
 
     function appConfig($urlRouterProvider, $stateProvider) {
           
-        $urlRouterProvider.otherwise('/jobs');           
+        $urlRouterProvider.otherwise('/employers/company/create');           
 
         $stateProvider 
         .state('users', {           
             url: '/users',
             abstract: true,
-            template: '<div ui-view></div>'
+            templateUrl: '/navbar/user.navbar.html' 
         })
             .state('users.job', {           
                 url: '/job',
@@ -25,7 +26,7 @@
                 .state('users.job.list', {
                     url: '/list',
                     controller: 'JobListController as jobList',
-                    templateUrl: 'src/users/job/job.list.html'
+                    templateUrl: '/users/job/job.list.html'
                 })
             .state('users.user', {           
                 url: '/user',
@@ -36,13 +37,23 @@
         .state('employers', {           
             url: '/employers',
             abstract: true,
-            template: '<div ui-view></div>'
+            templateUrl: '/navbar/company.navbar.html' 
         })
             .state('employers.company', {           
                 url: '/company',
                 abstract: true,
                 template: '<div ui-view></div>'
             })
+                .state('employers.company.create', {
+                    url: '/create',
+                    controller: 'CompanyCreateController as companyCreate',
+                    templateUrl: '/employers/company/company.create.html'
+                })
+                .state('employers.company.view', {
+                    url: '/view',
+                    controller: 'CompanyViewController as companyView',
+                    templateUrl: '/employers/company/company.view.html'
+                })     
             .state('employers.job', {           
                 url: '/job',
                 abstract: true,
@@ -51,17 +62,17 @@
                 .state('employers.job.list', {
                     url: '/list',
                     controller: 'JobListController as JobList',
-                    templateUrl: 'src/employers/job/job.list.html'
+                    templateUrl: '/employers/job/job.list.html'
                 })
                 .state('employers.job.view', {
                     url: '/view',
                     controller: 'JobViewController as jobView',
-                    templateUrl: 'src/employers/job/job.view.html'
+                    templateUrl: '/employers/job/job.view.html'
                 })
                 .state('employers.job.create', {
                     url: '/create',
                     controller: 'JobCreateController as jobCreate',
-                    templateUrl: 'src/employers/job/job.create.html'
+                    templateUrl: '/employers/job/job.create.html'
                 });
     }
 })();
