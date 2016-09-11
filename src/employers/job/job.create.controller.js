@@ -12,6 +12,17 @@
         var vm = this;
         vm.title = 'EJobCreateController';
 
+        // variables
+        vm.title;
+        vm.description;
+        vm.city;
+        vm.state;
+        vm.telephone;
+        vm.email;
+        vm.site;
+
+        // functions
+
         activate();
 
         ////////////////

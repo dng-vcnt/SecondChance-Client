@@ -1,44 +1,44 @@
 <div>
-  <form>
+  <form ng-submit="(expression)" >
     <h3><b>Create a job listing:</b></h3>
     <div class="form-group">
       <label>Job Title:</label>
       <input class="form-control" type="text"
-             ng-model="jobCreate.title">
+             ng-model="eJobCreate.title">
     </div>
 
     <div class="form-group">
       <label>Job Description:</label>
       <textarea class="form-control" type="text" rows="3"
-                ng-model="jobCreate.description">
+                ng-model="eJobCreate.description">
       </textarea>
     </div>
 
     <div class="form-group">
       <label>City:</label>
       <input class="form-control" type="text"
-             ng-model="jobCreate.city">
+             ng-model="eJobCreate.city">
     </div>
 
     <div class="form-group">
       <label>State:</label>
       <input class="form-control" type="text"
-             ng-model="jobCreate.state">
+             ng-model="eJobCreate.state">
     </div>
 
     <div class="form-group">
       <label>Phone:</label>
       <input class="form-control" type="text"
-             ng-model="jobCreate.telephone">
+             ng-model="eJobCreate.telephone">
     </div>
 
     <div class="form-group">
       <label>E-mail:</label>
       <input class="form-control" type="text"
-             ng-model="jobCreate.email">
+             ng-model="eJobCreate.email">
     </div>
 
-    <div class="form-group">
+    <div class="form-group" ng-model="eJobCreate.site">
       <label>Where is this job located:</label>
       <div class="radio">
         <label>
