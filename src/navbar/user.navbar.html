@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-3">
-		<!-- User Nav bar -->
+		<!-- Employers Nav Bar -->
 		<ul class="nav nav-pills nav-stacked">
-		  <li><a>Create/Edit Profile</a></li>
-		  <li><a>View Job Listings</a></li>
+		  <li><a ui-sref="users.user.view">View Profile</a></li>
+		  <li><a ui-sref="users.job.list">View Company Job Listings</a></li>
 		</ul>
 	</div>
 
-	<!-- User UI View -->
+	<!-- Company UI View -->
 	<div class="col-xs-12 col-sm-8">
 		<div ui-view></div>
 	</div>

@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .controller('CompanyCreateController', CompanyCreateController);
+        .controller('ECompanyCreateController', ECompanyCreateController);
 
-    CompanyCreateController.$inject = ['employerFactory', 'toastr'];
+    ECompanyCreateController.$inject = ['employerFactory', 'toastr'];
 
     /* @ngInject */
-    function CompanyCreateController(employerFactory, toastr) {
+    function ECompanyCreateController(employerFactory, toastr) {
         var vm = this;
-        vm.title = 'CompanyCreateController';
+        vm.title = 'ECompanyCreateController';
 
         activate();
 
