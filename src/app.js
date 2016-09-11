@@ -10,7 +10,7 @@
 
     function appConfig($urlRouterProvider, $stateProvider) {
           
-        $urlRouterProvider.otherwise('/employers/company/create');           
+        $urlRouterProvider.otherwise('/employers/company/view');           
 
         $stateProvider 
         .state('users', {
@@ -81,6 +81,21 @@
                     url: '/create',
                     controller: 'EJobCreateController as eJobCreate',
                     templateUrl: 'employers/job/job.create.html'
-                });
+                })
+            .state('employers.user', {           
+                url: '/user',
+                abstract: true,
+                template: '<div ui-view></div>'
+            })
+                .state('employers.user.list', {
+                    url: '/list',
+                    controller: 'EUserListController as eUserList',
+                    templateUrl: 'employers/user/user.list.html'
+                })
+                .state('employers.user.view', {
+                    url: '/view',
+                    controller: 'EUserViewController as eUserView',
+                    templateUrl: 'employers/user/user.view.html'
+                });;
     }
 })();
