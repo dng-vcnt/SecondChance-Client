@@ -61,7 +61,7 @@
             })
                 .state('employers.job.list', {
                     url: '/list',
-                    controller: 'JobListController as JobList',
+                    controller: 'JobListController as jobList',
                     templateUrl: '/employers/job/job.list.html'
                 })
                 .state('employers.job.create', {
