@@ -1,11 +1,19 @@
-.textForm {
-  margin: 2px 0 2px;
-  width: 20%;
-  color: gray;
-  font-size: 12px;
+:root {
+	--purple: #401F7C;
+	--white: #FFFFFF;
+	--darkPurple: #2C2246;
+	--blue: #2A40A7;
+	--grey: #E9E9E9;
+	--cloud: #D1D4E4;
+
 }
 
-#compDesc, #jobDesc {
-  width: 30%;
-  height: 150px;
+.jumbotron {
+	background-color: var(--purple);
+	color: var(--white);
 }
+
+#footer {
+	font-size: 12px;
+}
+

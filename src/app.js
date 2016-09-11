@@ -10,19 +10,24 @@
 
     function appConfig($urlRouterProvider, $stateProvider) {
           
-        $urlRouterProvider.otherwise('/jobs');           
+        $urlRouterProvider.otherwise('/employers/company/create');           
 
         $stateProvider 
-        .state('users', {           
+        .state('users', {
             url: '/users',
             abstract: true,
-            template: '<div ui-view></div>'
+            templateUrl: '/navbar/user.navbar.html'
         })
-            .state('users.job', {           
+            .state('users.job', {
                 url: '/job',
                 abstract: true,
                 template: '<div ui-view></div>'
             })
+                .state('users.job.detail', {
+                    url: '/detail',
+                    controller: 'JobDetailController as JobDetail',
+                    templateUrl: 'users/job/job.detail.html'
+                })
                 .state('users.job.list', {
                     url: '-list',
                     controller: 'JobListController as jobList',
@@ -33,17 +38,38 @@
                 abstract: true,
                 template: '<div ui-view></div>'
             })
+                .state('users.user.create', {
+                        url: '/create',
+                        controller: 'UserCreateController as UserCreate',
+                        templateUrl: 'users/user/user.create.html'
+                    })
+                .state('users.user.view', {
+                        url: '/view',
+                        controller: 'UserViewController as UserView',
+                        templateUrl: 'users/user/user.view.html'
+                    })
+
 
         .state('employers', {           
             url: '/employers',
             abstract: true,
-            template: '<div ui-view></div>'
+            templateUrl: '/navbar/company.navbar.html'
         })
             .state('employers.company', {           
                 url: '/company',
                 abstract: true,
                 template: '<div ui-view></div>'
             })
+                .state('employers.company.create', {
+                    url: '/create',
+                    controller: 'CompanyCreateController as companyCreate',
+                    templateUrl: '/employers/company/company.create.html'
+                })
+                .state('employers.company.view', {
+                    url: '/view',
+                    controller: 'CompanyViewController as companyView',
+                    templateUrl: '/employers/company/company.view.html'
+                })
             .state('employers.job', {           
                 url: '/job',
                 abstract: true,
