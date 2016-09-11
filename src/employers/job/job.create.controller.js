@@ -13,7 +13,7 @@
         vm.title = 'EJobCreateController';
 
         // variables
-        vm.title;
+        vm.positionTitle;
         vm.description;
         vm.city;
         vm.state;
