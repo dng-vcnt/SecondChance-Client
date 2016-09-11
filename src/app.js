@@ -3,7 +3,8 @@
 
     angular
         .module('app', ['ui.router', 'toastr'])
-        .value('apiUrl', 'http://localhost:50546/api/')  .config(appConfig);
+        .value('apiUrl', 'http://localhost:50546/api/')
+        .config(appConfig);
 
     appConfig.$inject = ['$urlRouterProvider', '$stateProvider']
 
@@ -23,9 +24,9 @@
                 template: '<div ui-view></div>'
             })
                 .state('users.job.list', {
-                    url: '/list',
+                    url: '-list',
                     controller: 'JobListController as jobList',
-                    templateUrl: 'src/users/job/job.list.html'
+                    templateUrl: 'users/job/job.list.html'
                 })
             .state('users.user', {           
                 url: '/user',
@@ -51,17 +52,17 @@
                 .state('employers.job.list', {
                     url: '/list',
                     controller: 'JobListController as JobList',
-                    templateUrl: 'src/employers/job/job.list.html'
+                    templateUrl: 'employers/job/job.list.html'
                 })
                 .state('employers.job.view', {
                     url: '/view',
                     controller: 'JobViewController as jobView',
-                    templateUrl: 'src/employers/job/job.view.html'
+                    templateUrl: 'employers/job/job.view.html'
                 })
                 .state('employers.job.create', {
                     url: '/create',
                     controller: 'JobCreateController as jobCreate',
-                    templateUrl: 'src/employers/job/job.create.html'
+                    templateUrl: 'employers/job/job.create.html'
                 });
     }
 })();
