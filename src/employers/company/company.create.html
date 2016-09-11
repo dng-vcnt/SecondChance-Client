@@ -1,39 +1,44 @@
-<div class="row">
-  <div class="col-xs-12">
-
-    <form>
-      <h3><b>Tell me a little about yourself:</b></h3>
-      <div class="form-group">
-        <label>Company Name:</label>
-        <input class="form-control" type="text" value="Bob's Building Service">
-      </div>
-      <div class="form-group">
-        <label>Street Address:</label>
-        <input class="form-control" type="text" value="1234 Felon Way">
-      </div>
-      <div class="form-group">
-        <label>City:</label>
-        <input class="form-control" type="text" value="San Diego">
-      </div>
-      <div class="form-group">
-        <label>State:</label>
-        <input class="form-control" type="text" value="CA">
-      </div>
-      <div class="form-group">
-        <label>Phone:</label>
-        <input class="form-control" type="text" value="619-867-5309">
-      </div>
-      <div class="form-group">
-        <label>E-mail:</label>
-        <input class="form-control" type="text" value="bobthebuilder@bobsbuilding.com">
-      </div>
-      <div class="form-group">
-        <label>What is your company all about:</label>
-        <textarea class="form-control" id="compDesc" rows="3">We love felons!</textarea>
-      </div>
-      <input class="btn btn-primary" type="submit" value="Submit">
-    </form>
-
-  </div>
+<div>
+  <form>
+    <h3><b>Tell me a little about yourself:</b></h3>
+    <div class="form-group">
+      <label>Company Name:</label>
+      <input class="form-control" type="text" 
+             ng-model="companyCreate.name">
+    </div>
+    <div class="form-group">
+      <label>Street Address:</label>
+      <input class="form-control" type="text" 
+             ng-model="companyCreate.address">
+    </div>
+    <div class="form-group">
+      <label>City:</label>
+      <input class="form-control" type="text"
+             ng-model="companyCreate.city">
+    </div>
+    <div class="form-group">
+      <label>State:</label>
+      <input class="form-control" type="text" 
+             ng-model="companyCreate.state">
+    </div>
+    <div class="form-group">
+      <label>Phone:</label>
+      <input class="form-control" type="text" 
+             ng-model="companyCreate.telephone">
+    </div>
+    <div class="form-group">
+      <label>E-mail:</label>
+      <input class="form-control" type="text" 
+             ng-model="companyCreate.email">
+    </div>
+    <div class="form-group">
+      <label>What is your company all about:</label>
+      <textarea class="form-control" rows="3"
+             ng-model="companyCreate.description">
+        We love felons!
+      </textarea>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
 </div>
 
