@@ -11,26 +11,57 @@
           
         $urlRouterProvider.otherwise('/jobs');           
 
-        $stateProvider   
-        .state('jobs', {           
-            url: '/jobs',
+        $stateProvider 
+        .state('users', {           
+            url: '/users',
             abstract: true,
             template: '<div ui-view></div>'
         })
-            .state('project.list', {
-                url: '/list',
-                controller: 'ProjectListController as projectList',
-                templateUrl: 'app/project/project.list.html'
+            .state('users.job', {           
+                url: '/job',
+                abstract: true,
+                template: '<div ui-view></div>'
             })
+                .state('users.job.list', {
+                    url: '/list',
+                    controller: 'JobListController as jobList',
+                    templateUrl: 'src/users/job/job.list.html'
+                })
+            .state('users.user', {           
+                url: '/user',
+                abstract: true,
+                template: '<div ui-view></div>'
+            })
+
         .state('employers', {           
             url: '/employers',
-                       templateUrl: '/employers/employers.html',
-                       controller: 'EmployersController as employers'     
+            abstract: true,
+            template: '<div ui-view></div>'
         })
-        .state('felons', {           
-            url: '/felons',
-                       templateUrl: '/felons/felons.html',
-                       controller: 'FelonsController as felons'     
-        });
+            .state('employers.company', {           
+                url: '/company',
+                abstract: true,
+                template: '<div ui-view></div>'
+            })
+            .state('employers.job', {           
+                url: '/job',
+                abstract: true,
+                template: '<div ui-view></div>'
+            })
+                .state('employers.job.list', {
+                    url: '/list',
+                    controller: 'JobListController as JobList',
+                    templateUrl: 'src/employers/job/job.list.html'
+                })
+                .state('employers.job.view', {
+                    url: '/view',
+                    controller: 'JobViewController as jobView',
+                    templateUrl: 'src/employers/job/job.view.html'
+                })
+                .state('employers.job.create', {
+                    url: '/create',
+                    controller: 'JobCreateController as jobCreate',
+                    templateUrl: 'src/employers/job/job.create.html'
+                });
     }
 })();
