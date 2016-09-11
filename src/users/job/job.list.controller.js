@@ -3,12 +3,12 @@
 
     angular
         .module('app')
-        .controller('JobListController', JobListController);
+        .controller('UJobListController', UJobListController);
 
-    JobListController.$inject = ['jobFactory'];
+    UJobListController.$inject = ['jobFactory'];
 
     /* @ngInject */
-    function JobListController(jobFactory) {
+    function UJobListController(jobFactory) {
         var vm = this;
         vm.jobs = [];
 
