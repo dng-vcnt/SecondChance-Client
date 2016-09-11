@@ -1,54 +1,47 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <form role="form">
+            <form role="form" name="createUser" ng-submit="createUser.$valid && uUserCreate.submitUser();">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                            <input type="text" ng-model="uUserCreate.user.firstName" id="first_name" class="form-control input-lg" placeholder="First Name" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+                            <input type="text" ng-model="uUserCreate.user.lastName" id="last_name" class="form-control input-lg" placeholder="Last Name" required>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="adress" name="adress" class="form-control input-lg" placeholder="Adress" tabindex="3">
+                    <input ng-model="uUserCreate.user.city" class="form-control input-lg" placeholder="City" required>
+                    <input ng-model="uUserCreate.user.state" class="form-control input-lg" placeholder="State" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+                    <input type="email" ng-model="uUserCreate.user.email" id="email" class="form-control input-lg" placeholder="Email Address" required>
                 </div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="skills" class="form-control input-lg" placeholder="Skills" tabindex="5">
+                            <input type="text" ng-model="uUserCreate.user.skill1" class="form-control input-lg" placeholder="Skill">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group">
-                            <input type="text" name="felony" class="form-control input-lg" placeholder="Felony Commited" tabindex="6">
+                            <input type="text" ng-model="uUserCreate.user.feloniesCommitted" class="form-control input-lg" placeholder="Felony Commited" required>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-4 col-sm-3 col-md-3">
-                        <span class="button-checkbox">
-                        
-                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
-                    </span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Tell Us About Yourself!</label>
-                    <textarea class="form-control" type="text" rows="3">
+                    <textarea ng-model="uUserCreate.user.aboutMe" class="form-control" type="text" rows="3" required>
                     </textarea>
                 </div>
                 <hr class="colorgraph">
                 <div class="row">
-                    
-                    <div class="col-md-6 col-md-offset-3"><a href="/users/user/view" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+
+                    <div class="col-md-6 col-md-offset-3"><input class="btn btn-success btn-block btn-lg" type="Submit" value="Submit"></div>
                 </div>
             </form>
         </div>

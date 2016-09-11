@@ -5,19 +5,24 @@
         .module('app')
         .controller('UUserCreateController', UUserCreateController);
 
-    UUserCreateController.$inject = ['jobFactory'];
+    UUserCreateController.$inject = ['userFactory', 'toastr'];
 
     /* @ngInject */
-    function UUserCreateController(jobFactory) {
+    function UUserCreateController(userFactory, toastr) {
         var vm = this;
-        vm.jobs = [];
+        vm.user = {};
+        vm.submitUser = submitUser;
 
         activate();
 
         function activate() {
-            jobFactory.getJobList().then(
+        }
+
+        function submitUser() {
+            userFactory.addUser(vm.user).then(
                 function(data) {
-                    vm.jobs = data;
+                    toastr.success('Successfully created profile!');
+                    vm.user = {};
                 }
             );
         }

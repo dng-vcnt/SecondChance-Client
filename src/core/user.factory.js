@@ -15,13 +15,15 @@
             updateUser: updateUser,
             deleteUser: deleteUser
         };
+        var usersUrl = apiUrl + 'users';
         return service;
+
 
         ////////////////
 
         function getUsers() {
             var defer = $q.defer();
-            $http.get(apiUrl + 'users').then(
+            $http.get(usersUrl).then(
                 function(response) {
                     defer.resolve(response.data);
                 },
@@ -34,7 +36,7 @@
 
         function addUser(user) {
             var defer = $q.defer();
-            $http.post(apiUrl, user).then (
+            $http.post(usersUrl, user).then (
                 function(response) {
                     defer.resolve(response.data);
                 },
@@ -47,7 +49,7 @@
 
         function deleteUser(user) {
             var defer = $q.defer();
-            $http.delete(apiUrl /*userId*/).then (
+            $http.delete(usersUrl /*userId*/).then (
                 function(response) {
                     defer.resolve(response.data);
                 },
@@ -60,7 +62,7 @@
 
         function updateUser(user) {
             var defer = $q.defer();
-            $http.put(apiUrl, user).then (
+            $http.put(usersUrl, user).then (
                 function(response) {
                     defer.resolve(response.data);
                 },
