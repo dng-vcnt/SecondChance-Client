@@ -28,9 +28,8 @@
         }
 
         function getCompany() {
-            employerFactory.getCompany().then (
+            employerFactory.getCompanyById(1).then (
                 function(data) {
-                    toastr.success("Successfully added company info");
                     vm.company = data;
                 },
                 function(error) {

@@ -12,6 +12,7 @@
         var service = {
             addCompany: addCompany,
             getCompany: getCompany,
+            getCompanyById: getCompanyById,
             updateCompany: updateCompany,
             deleteCompany: deleteCompany
         };
@@ -22,6 +23,19 @@
         function getCompany() {
             var defer = $q.defer();
             $http.get(apiUrl + 'Employers').then (
+                function(response) {
+                    defer.resolve(response.data);
+                },
+                function(error) {
+                    defer.reject(error);
+                }
+            );
+            return defer.promise;
+        }
+
+        function getCompanyById(employerId) {
+            var defer = $q.defer();
+            $http.get(apiUrl + 'Employers/' + employerId).then (
                 function(response) {
                     defer.resolve(response.data);
                 },
