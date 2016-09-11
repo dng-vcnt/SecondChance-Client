@@ -1,41 +1,45 @@
 <div>
-  <form>
+  <form ng-submit="eCompanyCreate.saveCompany(eCompanyCreate.company)">
     <h3><b>Tell us a little about yourself:</b></h3>
     <div class="form-group">
       <label>Company Name:</label>
       <input class="form-control" type="text" 
-             ng-model="eCompanyCreate.name">
+             ng-model="eCompanyCreate.company.name">
     </div>
     <div class="form-group">
       <label>Street Address:</label>
       <input class="form-control" type="text" 
-             ng-model="eCompanyCreate.address">
+             ng-model="eCompanyCreate.company.address">
     </div>
     <div class="form-group">
       <label>City:</label>
       <input class="form-control" type="text"
-             ng-model="eCompanyCreate.city">
+             ng-model="eCompanyCreate.company.city">
     </div>
     <div class="form-group">
       <label>State:</label>
       <input class="form-control" type="text" 
-             ng-model="eCompanyCreate.state">
+             ng-model="eCompanyCreate.company.state">
+    </div>
+    <div class="form-group">
+      <label>Contact Name:</label>
+      <input class="form-control" type="text" 
+             ng-model="eCompanyCreate.company.contactName">
     </div>
     <div class="form-group">
       <label>Phone:</label>
       <input class="form-control" type="text" 
-             ng-model="eCompanyCreate.telephone">
+             ng-model="eCompanyCreate.company.contactPhone">
     </div>
     <div class="form-group">
       <label>E-mail:</label>
       <input class="form-control" type="text" 
-             ng-model="eCompanyCreate.email">
+             ng-model="eCompanyCreate.company.contactEmail">
     </div>
     <div class="form-group">
       <label>What is your company all about:</label>
       <textarea class="form-control" rows="3"
-             ng-model="eCompanyCreate.description">
-        We love felons!
+             ng-model="eCompanyCreate.company.description">
       </textarea>
     </div>
     <input class="btn btn-primary" type="submit" value="Save">

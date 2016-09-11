@@ -21,7 +21,7 @@
 
         function getCompany() {
             var defer = $q.defer();
-            $http.get(apiUrl).then (
+            $http.get(apiUrl + 'Employers').then (
                 function(response) {
                     defer.resolve(response.data);
                 },
@@ -34,7 +34,7 @@
 
         function updateCompany(company) {
             var defer = $q.defer();
-            $http.put(apiUrl, company).then (
+            $http.put(apiUrl + 'Employers' + company.employerId, company).then (
                 function(response) {
                     defer.resolve(response.data);
                 },
@@ -47,7 +47,7 @@
 
         function addCompany(company) {
             var defer = $q.defer();
-            $http.post(apiUrl, company).then (
+            $http.post(apiUrl + 'employers', company).then (
                 function(response) {
                     defer.resolve(response.data);
                 },
@@ -60,7 +60,7 @@
 
         function deleteCompany(company) {
             var defer = $q.defer();
-            $http.delete(apiUrl /*companyId*/).then (
+            $http.delete(apiUrl + 'Employers' + company.employerId).then (
                 function(response) {
                     defer.resolve(response.data);
                 },
