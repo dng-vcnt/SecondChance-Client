@@ -19,6 +19,32 @@
 
         ////////////////
 
+        function getCompany() {
+            var defer = $q.defer();
+            $http.get(apiUrl).then (
+                function(response) {
+                    defer.resolve(response.data);
+                },
+                function(error) {
+                    defer.reject(error);
+                }
+            );
+            return defer.promise;
+        }
+
+        function updateCompany(company) {
+            var defer = $q.defer();
+            $http.put(apiUrl, company).then (
+                function(response) {
+                    defer.resolve(response.data);
+                },
+                function(error) {
+                    defer.reject(error);
+                }
+            );
+            return defer.promise;
+        }
+
         function addCompany(company) {
             var defer = $q.defer();
             $http.post(apiUrl, company).then (
@@ -45,30 +71,5 @@
             return defer.promise;
         }
 
-        function getCompany() {
-            var defer = $q.defer();
-            $http.get(apiUrl).then (
-                function(response) {
-                    defer.resolve(response.data);
-                },
-                function(error) {
-                    defer.reject(error);
-                }
-            );
-            return defer.promise;
-        }
-
-        function updateCompany(company) {
-            var defer = $q.defer();
-            $http.put(apiUrl, company).then (
-                function(response) {
-                    defer.resolve(response.data);
-                },
-                function(error) {
-                    defer.reject(error);
-                }
-            );
-            return defer.promise;
-        }
     }
 })();

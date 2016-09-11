@@ -5,18 +5,26 @@
         .module('app')
         .controller('EUserListController', EUserListController);
 
-    EUserListController.$inject = ['toastr'];
+    EUserListController.$inject = ['toastr', 'userFactory'];
 
     /* @ngInject */
-    function EUserListController(toastr) {
+    function EUserListController(toastr, userFactory) {
         var vm = this;
-        vm.title = 'EUserListController';
+        vm.users = [];
 
         activate();
 
         ////////////////
 
         function activate() {
+            userFactory.getUsers().then(
+                function(data){
+                    vm.users = data;
+                },
+                function(error) {
+                    // handle error
+                }
+            );
         }
     }
 })();
