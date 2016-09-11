@@ -5,10 +5,10 @@
         .module('app')
         .controller('ECompanyViewController', ECompanyViewController);
 
-    ECompanyViewController.$inject = ['employerFactory','toastr'];
+    ECompanyViewController.$inject = ['employerFactory','$stateParams','toastr'];
 
     /* @ngInject */
-    function ECompanyViewController(employerFactory, toastr) {
+    function ECompanyViewController(employerFactory, $stateParams, toastr) {
         var vm = this;
         vm.title = 'ECompanyViewController';
 
@@ -24,11 +24,12 @@
         ////////////////
 
         function activate() {
-            getCompany();
+            var companyId = $stateParams.companyId ? $stateParams.companyId : 1;
+            getCompany(companyId);
         }
 
-        function getCompany() {
-            employerFactory.getCompanyById(1).then (
+        function getCompany(companyId) {
+            employerFactory.getCompanyById(companyId).then (
                 function(data) {
                     vm.company = data;
                 },

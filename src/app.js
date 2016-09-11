@@ -23,7 +23,7 @@
                 abstract: true,
                 template: '<div ui-view></div>'
             })
-                
+
                 .state('users.job.list', {
                     url: '/list',
                     controller: 'UJobListController as uJobList',
@@ -63,7 +63,7 @@
                     templateUrl: 'employers/company/company.create.html'
                 })
                 .state('employers.company.view', {
-                    url: '/view',
+                    url: '/view?companyId',
                     controller: 'ECompanyViewController as eCompanyView',
                     templateUrl: 'employers/company/company.view.html'
                 })

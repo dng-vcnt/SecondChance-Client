@@ -5,10 +5,10 @@
         .module('app')
         .controller('ECompanyCreateController', ECompanyCreateController);
 
-    ECompanyCreateController.$inject = ['employerFactory', 'toastr'];
+    ECompanyCreateController.$inject = ['employerFactory', 'toastr', '$state'];
 
     /* @ngInject */
-    function ECompanyCreateController(employerFactory, toastr) {
+    function ECompanyCreateController(employerFactory, toastr, $state) {
         var vm = this;
         vm.title = 'ECompanyCreateController';
 
@@ -29,6 +29,7 @@
             employerFactory.addCompany(company).then (
                 function(data) {
                     toastr.success("Successfully added company info");
+                    $state.go('^.view', {'companyId': data.employerId});
                 },
                 function(error) {
                     toastr.error(error.status, error.statusText);
