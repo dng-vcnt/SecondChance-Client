@@ -5,29 +5,31 @@
         .module('app')
         .controller('EJobCreateController', EJobCreateController);
 
-    EJobCreateController.$inject = ['toastr'];
+    EJobCreateController.$inject = ['toastr', '$state', 'jobFactory'];
 
     /* @ngInject */
-    function EJobCreateController(toastr) {
+    function EJobCreateController(toastr, $state, jobFactory) {
         var vm = this;
-        vm.title = 'EJobCreateController';
-
-        // variables
-        vm.positionTitle;
-        vm.description;
-        vm.city;
-        vm.state;
-        vm.telephone;
-        vm.email;
-        vm.site;
-
-        // functions
+        vm.job = {};
+        vm.submitJob = submitJob;
 
         activate();
 
         ////////////////
 
         function activate() {
+        }
+
+        function submitJob() {
+            jobFactory.addJob(vm.job).then(
+                function(data) {
+                    vm.job = {};
+                    $state.go('^.list')
+                },
+                function(error) {
+                    // handle error
+                }
+            )
         }
     }
 })();

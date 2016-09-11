@@ -15,41 +15,64 @@
             updateJob: updateJob,
             deleteJob: deleteJob
         };
+        var jobUrl = apiUrl + 'jobs/';
 
         return service;
 
         function getJobList() {
             var defer = $q.defer();
-            var jobs = [
-                {
-                    company: { name: "Origin Code Academy" },
-                    position: "Software Developer",
-                    location: "San Diego",
-                    description: "Program things!"
+            $http.get(jobUrl).then (
+                function(response) {
+                    defer.resolve(response.data);
                 },
-                {
-                    company: { name: "McDonalds" },
-                    position: "Chef",
-                    location: "San Diego",
-                    description: "Cook burgers and fries"
+                function(error) {
+                    defer.reject(error);
                 }
-            ];
-
-            defer.resolve(jobs);
-
+            );
             return defer.promise;
         }
 
-        function addJob() {
+        function addJob(job) {
+            var defer = $q.defer();
+            job.employerId = 1;
 
+            $http.post(jobUrl, job).then (
+                function(response) {
+                    defer.resolve(response.data);
+                },
+                function(error) {
+                    defer.reject(error);
+                }
+            );
+            return defer.promise;
         }
 
-        function updateJob() {
+        function updateJob(job) {
+            var defer = $q.defer();
 
+            $http.put(jobUrl, job).then (
+                function(response) {
+                    defer.resolve(response.data);
+                },
+                function(error) {
+                    defer.reject(error);
+                }
+            );
+            return defer.promise;
         }
 
-        function deleteJob() {
-
+        function deleteJob(job) {
+            var defer = $q.defer();
+            $http.delete(jobUrl).then (
+                function(response) {
+                    defer.resolve(response.data);
+                },
+                function(error) {
+                    defer.reject(error);
+                }
+            );
+            return defer.promise;
         }
+
     }
 })();

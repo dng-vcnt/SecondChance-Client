@@ -5,18 +5,21 @@
         .module('app')
         .controller('EJobListController', EJobListController);
 
-    EJobListController.$inject = ['toastr'];
+    EJobListController.$inject = ['toastr', 'jobFactory'];
 
     /* @ngInject */
-    function EJobListController(toastr) {
+    function EJobListController(toastr, jobFactory) {
         var vm = this;
-        vm.title = 'EJobListController';
+        vm.jobs = [];
 
         activate();
 
-        ////////////////
-
         function activate() {
+            jobFactory.getJobList().then(
+                function(data) {
+                    vm.jobs = data;
+                }
+            );
         }
     }
 })();
