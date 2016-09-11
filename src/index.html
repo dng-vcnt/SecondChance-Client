@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="app" lang="en">
+
+<html lang="en" ng-app="app">
+
 <head>
   <meta charset="UTF-8">
   <title></title>
@@ -14,9 +16,32 @@
 </head>
 
 <body>
+<div class="jumbotron">
+	<div class="container">
+		<h1>Second Chance</h1>
+		<p>Jobs listings for reformed convicts</p>
+	</div>
+</div>
 
-
+<!-- Nav UI View -->
+<div class="container">
   <div ui-view></div>
+  <br><br><hr><br>
+</div>
+
+<!-- Footer -->
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="cols-xs-12">
+				<p id="footer" class="text-center">
+					Second Chance by Dan, Katie, Reggie, Todd, and Vincent. The source
+					code is licensed MIT. The website content is licensed CC ANS 4.0.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <!-- bower:js -->
@@ -32,6 +57,8 @@
 <script src="core/job.factory.js"></script>
 <script src="core/user.factory.js"></script>
 <script src="users/job/job.list.controller.js"></script>
+<script src="employers/company/company.create.controller.js"></script>
+
 <!-- endinject -->
 </body>
 </html>
