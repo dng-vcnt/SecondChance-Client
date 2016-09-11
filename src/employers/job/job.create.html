@@ -1,38 +1,53 @@
-<head><!---Delete this section!-->
+<div>
+  <form>
+    <h3><b>Create a job listing:</b></h3>
+    <div class="form-group">
+      <label>Job Title:</label>
+      <input class="form-control" type="text">
+    </div>
+    
+    <div class="form-group">
+      <label>Job Description:</label>
+      <textarea class="form-control" type="text" rows="3">
+      </textarea>
+    </div>
 
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <div class="form-group">
+      <label>City:</label>
+      <input class="form-control" type="text">
+    </div>
 
-</head><!--Delete this section!-->
+    <div class="form-group">
+      <label>State:</label>
+      <input class="form-control" type="text">
+    </div>
 
+    <div class="form-group">
+      <label>Phone:</label>
+      <input class="form-control" type="text">
+    </div>
 
-<body>
+    <div class="form-group">
+      <label>E-mail:</label>
+      <input class="form-control" type="text">
+    </div>
 
-<form class="compListing">
-  <h3><b>Create a job listing:</b></h3>
-  <hr>
-  <p class="jobListing">Job Title:</p>
-  <input class="textForm" type="text" id="jobTitle" value="Brick Maker"><br>
+    <div class="form-group">
+      <label>Where is this job located:</label>
+      <div class="radio">
+        <label>
+          <input type="radio" id="onsite" value="onsite" checked>
+          Onsite
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" id="offsite" value="offsite">
+          Offsite
+        </label>
+      </div>
+    </div>
 
-  <p class="jobListing">Job Description:</p>
-  <textarea class="textForm" type="text" id="jobDesc" rows="10" cols="20">You will make some sweet bricks!</textarea><br>
-
-  <p class="jobListing loc hidden">City:</p>
-  <input class="textForm loc hidden" type="text" id="jobCity" value="San Diego"><br>
-
-  <p class="jobListing loc hidden">State:</p>
-  <input class="textForm loc hidden" type="text" id="jobState" value="CA"><br>
-
-  <p class="jobListing loc hidden">Phone:</p>
-  <input class="textForm loc hidden" type="text" id="jobPhone" value="619-867-5309"><br>
-
-  <p class="jobListing loc hidden">E-mail:</p>
-  <input class="textForm loc hidden" type="text" id="jobEmail" value="bobthebuilder@bobsbuilding.com"><br>
-
-  <p class="jobListing">Where is this job located:</p>
-  <input type="radio" id="onsite" value="Onsite" checked>Onsite
-  <input type="radio" id="offsite" value="Offsite">Offsite<br><br>
-
-  <input class="button" type="submit" value="Submit">
-</form>
-
-</body>
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+</div>
