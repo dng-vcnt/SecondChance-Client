@@ -2,6 +2,13 @@
   <form name="jobForm" ng-submit="jobForm.$valid && eJobCreate.submitJob();" >
     <h3><b>Create a job listing:</b></h3>
     <div class="form-group">
+      <label>Company name:</label>
+      <select ng-options="company.name for company in eJobCreate.companies | orderBy: 'lastName'" ng-model="eJobCreate.job.employer" class="form-control" required>
+        <option value="">Select company</option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label>Job Title:</label>
       <input class="form-control" type="text"
              ng-model="eJobCreate.job.name" required>

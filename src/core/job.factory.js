@@ -34,7 +34,6 @@
 
         function addJob(job) {
             var defer = $q.defer();
-            job.employerId = 1;
 
             $http.post(jobUrl, job).then (
                 function(response) {
