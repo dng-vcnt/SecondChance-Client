@@ -3,11 +3,11 @@
     <div class="col-md-2 col-xs-3">
       <div class="thumbnail"><img src="http://www.clipartbest.com/cliparts/7ia/KMp/7iaKMp6iA.png" alt=""></div>
     </div>
-    <p><strong>Name:</strong>{{job.company.name}}</p>
-    <p><strong>Position:</strong>{{job.position}}</p>
-    <p><strong>Location:</strong>{{job.location}}</p>
+    <p><strong>Company: </strong>{{job.employer.name}}</p>
+    <p><strong>Position: </strong>{{job.name}}</p>
+    <p><strong>Location: </strong>{{job.city}}, {{job.state}}</p>
     <p ng-show="true">
-        <strong>Description:</strong>{{job.description}}
+        <strong>Description: </strong>{{job.description}}
     </p>
   </li>
 </ul>
