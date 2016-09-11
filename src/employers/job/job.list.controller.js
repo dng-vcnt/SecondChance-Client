@@ -3,14 +3,14 @@
 
     angular
         .module('app')
-        .controller('EJobCreateController', EJobCreateController);
+        .controller('EJobListController', EJobListController);
 
-    EJobCreateController.$inject = ['toastr'];
+    EJobListController.$inject = ['toastr'];
 
     /* @ngInject */
-    function EJobCreateController(toastr) {
+    function EJobListController(toastr) {
         var vm = this;
-        vm.title = 'EJobCreateController';
+        vm.title = 'EJobListController';
 
         activate();
 
