@@ -1,90 +1,55 @@
-<!DOCTYPE html>
-<html lang="en" ng-app='app'>
-
-<head>
-</head>
-
-<body>
-    <form>
-        <div class="form-group row">
-            <label for="example-text-input" class="col-xs-2 col-form-label">Text</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <form role="form">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="adress" name="adress" class="form-control input-lg" placeholder="Adress" tabindex="3">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="skills" class="form-control input-lg" placeholder="Skills" tabindex="5">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="felony" class="form-control input-lg" placeholder="Felony Commited" tabindex="6">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3 col-md-3">
+                        <span class="button-checkbox">
+                        
+                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+                    </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Tell Us About Yourself!</label>
+                    <textarea class="form-control" type="text" rows="3">
+                    </textarea>
+                </div>
+                <hr class="colorgraph">
+                <div class="row">
+                    
+                    <div class="col-md-6 col-md-offset-3"><a href="/users/user/view" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+                </div>
+            </form>
         </div>
-        <div class="form-group row">
-            <label for="example-search-input" class="col-xs-2 col-form-label">Search</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-url-input" class="col-xs-2 col-form-label">URL</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="url" value="http://getbootstrap.com" id="example-url-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="password" value="hunter2" id="example-password-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-number-input" class="col-xs-2 col-form-label">Number</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="number" value="42" id="example-number-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Date and time</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-month-input" class="col-xs-2 col-form-label">Month</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="month" value="2011-08" id="example-month-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-week-input" class="col-xs-2 col-form-label">Week</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-time-input" class="col-xs-2 col-form-label">Time</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="example-color-input" class="col-xs-2 col-form-label">Color</label>
-            <div class="col-xs-10">
-                <input class="form-control" type="color" value="#563d7c" id="example-color-input">
-            </div>
-        </div>
-    </form>
-</body>
-
-</html>
+    </div>

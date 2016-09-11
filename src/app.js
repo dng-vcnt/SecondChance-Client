@@ -23,11 +23,7 @@
                 abstract: true,
                 template: '<div ui-view></div>'
             })
-                .state('users.job.detail', {
-                    url: '/detail',
-                    controller: 'UJobDetailController as uJobDetail',
-                    templateUrl: 'users/job/job.detail.html'
-                })
+                
                 .state('users.job.list', {
                     url: '/list',
                     controller: 'UJobListController as uJobList',
