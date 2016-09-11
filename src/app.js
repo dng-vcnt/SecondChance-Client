@@ -22,16 +22,29 @@
                 abstract: true,
                 template: '<div ui-view></div>'
             })
-                .state('users.job.list', {
-                    url: '/list',
-                    controller: 'JobListController as jobList',
-                    templateUrl: 'src/users/job/job.list.html'
+                .state('users.job.detail', {
+                    url: '/detail',
+                    controller: 'JobDetailController as JobDetail',
+                    templateUrl: 'users/job/job.detail.html'
                 })
+
+                
             .state('users.user', {           
                 url: '/user',
                 abstract: true,
                 template: '<div ui-view></div>'
             })
+                .state('users.user.create', {
+                        url: '/create',
+                        controller: 'UserCreateController as UserCreate',
+                        templateUrl: 'users/user/user.create.html'
+                    })
+                .state('users.user.view', {
+                        url: '/view',
+                        controller: 'UserViewController as UserView',
+                        templateUrl: 'users/user/user.view.html'
+                    })
+
 
         .state('employers', {           
             url: '/employers',
@@ -51,17 +64,17 @@
                 .state('employers.job.list', {
                     url: '/list',
                     controller: 'JobListController as JobList',
-                    templateUrl: 'src/employers/job/job.list.html'
+                    templateUrl: 'employers/job/job.list.html'
                 })
                 .state('employers.job.view', {
                     url: '/view',
                     controller: 'JobViewController as jobView',
-                    templateUrl: 'src/employers/job/job.view.html'
+                    templateUrl: 'employers/job/job.view.html'
                 })
                 .state('employers.job.create', {
                     url: '/create',
                     controller: 'JobCreateController as jobCreate',
-                    templateUrl: 'src/employers/job/job.create.html'
+                    templateUrl: 'employers/job/job.create.html'
                 });
     }
 })();
